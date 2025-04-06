@@ -1,27 +1,29 @@
-model CASE_FILES {
+model caseFiles {
   id                  Int      @id @default(autoincrement())
-  code                String   @db.VarChar(45)
-  jurisdictional_body String   @db.VarChar(45)
-  judicial_district   String   @db.VarChar(45)
-  judge               String   @db.VarChar(100)
-  legal_specialist    String   @db.VarChar(100)
-  process_type        String   @db.VarChar(45)
-  observation         String   @db.VarChar(1000)
-  speciality          String   @db.VarChar(45)
-  matters             String   @db.VarChar(45)
-  status              String   @db.VarChar(45)
-  procedural_stage    String   @db.VarChar(45)
-  location            String   @db.VarChar(45)
-  conclusion_reason   String   @db.VarChar(45)
-  sumary              String   @db.VarChar(1000)
+  code                String   @default("N/A") @db.VarChar(45)
+  jurisdictional_body String   @default("N/A") @db.VarChar(45)
+  judicial_district   String   @default("N/A") @db.VarChar(45)
+  judge               String   @default("N/A") @db.VarChar(100)
+  legal_specialist    String   @default("N/A") @db.VarChar(100)
+  process_type        String   @default("N/A") @db.VarChar(45)
+  observation         String   @default("N/A") @db.VarChar(1000)
+  speciality          String   @default("N/A") @db.VarChar(45)
+  matters             String   @default("N/A") @db.VarChar(45)
+  status              String   @default("N/A") @db.VarChar(45)
+  procedural_stage    String   @default("N/A") @db.VarChar(45)
+  location            String   @default("N/A") @db.VarChar(45)
+  conclusion_reason   String   @default("N/A") @db.VarChar(45)
+  sumary              String   @default("N/A") @db.VarChar(1000)
   conclusion_date     DateTime @default(now())
   start_date          DateTime @default(now())
+  is_scrapper_active  Boolean  @default(false)
 
   created_at DateTime  @default(now())
   updated_at DateTime  @default(now())
   deleted_at DateTime?
 
-  USER_GROUP_CASE_FILES USER_GROUP_CASE_FILES[]
-  BINNACLES             BINNACLES[]
-  
+  USER_GROUP_CASE_FILES user_group_case_files[]
+  BINNACLES             binnacles[]
+
+  @@map("CASE_FILES")
 }

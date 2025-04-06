@@ -2,6 +2,9 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { CaseFilesController } from './modules/judicial/case-files/case-files.controller';
+import { CaseFilesService } from './modules/judicial/case-files/case-files.service';
+import { PrismaService } from './modules/prisma/prisma.service';
 
 @Module({
   imports: [
@@ -10,7 +13,7 @@ import { AppService } from './app.service';
       load: [() => ({})],
     }),
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [CaseFilesController, AppController],
+  providers: [CaseFilesService, AppService, PrismaService],
 })
 export class AppModule {}

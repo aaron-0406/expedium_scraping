@@ -8,7 +8,7 @@ export class SuccessiveScrapingController {
   ) {}
 
   @Get()
-  getHello(): string {
-    return this.successiveScrapingService.getHello();
+  getHello(): any {
+    return this.successiveScrapingService.main();
   }
 }

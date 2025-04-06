@@ -1,0 +1,22 @@
+export type CaseFile = {
+  id: number;
+  code: string;
+  jurisdictional_body: string;
+  judicial_district: string;
+  judge: string;
+  legal_specialist: string;
+  process_type: string;
+  observation: string;
+  speciality: string;
+  matters: string;
+  status: string;
+  procedural_stage: string;
+  location: string;
+  conclusion_reason: string;
+  sumary: string;
+  conclusion_date: Date;
+  start_date: Date;
+  created_at: Date;
+  updated_at: Date;
+  deleted_at?: Date | null;
+};
